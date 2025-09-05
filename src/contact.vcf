@@ -1,0 +1,7 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Max Mustermann
+ORG:Beispiel GmbH
+TEL;TYPE=cell:+491701234567
+EMAIL:max.mustermann@example.com
+END:VCARD
