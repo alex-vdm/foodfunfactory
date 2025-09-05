@@ -1,0 +1,104 @@
+
+/* ---------------------------------------------------------------------------------------------------- */
+/*                                              Settings                                                */
+/* ---------------------------------------------------------------------------------------------------- */
+
+:root {
+	--main-color: #1E394D;
+
+    /* Background Fade */
+    --background_fade--top:   #FAE8A8; /* helles, warmes Gelb */
+    --background_fade--c1:    #F8D58E; /* gelb/peach */
+    --background_fade--c2:    #F4B98B; /* peach/rosa */
+    --background_fade--c3:    #EE9381; /* lachs */
+    --background_fade--bottom:#E87873; /* korallrot */
+}
+
+@font-face {
+    font-family: Name;
+    src: url(./src/fonts/file.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+/*                                                Body                                                  */
+/* ---------------------------------------------------------------------------------------------------- */
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--main-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 600px;
+
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.-background_fade {
+    background-color: var(--c2);        /* Fallback */
+    /* ein Hauch „Licht“ oben wie auf dem Flyer */
+    background-image:
+      radial-gradient(120% 70% at 50% -20%, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 65%),
+      linear-gradient(180deg,
+        var(--background_fade--top)    0%,
+        var(--background_fade--c1)    18%,
+        var(--background_fade--c2)    45%,
+        var(--background_fade--c3)    72%,
+        var(--background_fade--bottom)100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed, fixed; /* wirkt auf allen Viewports ruhig */
+    background-size: 100% 100%, 100% 100%;
+}
+
+.logo {
+    width: 20%;
+    min-width: 400px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details--item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.details--item img {
+    width: 30px;
+}
+
