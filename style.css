@@ -1,6 +1,6 @@
-/* ---------------------------------------------------------------------------------------------------- */
+/* ____________________________________________________________________________________________________ */
 /*                                              Settings                                                */
-/* ---------------------------------------------------------------------------------------------------- */
+/* ____________________________________________________________________________________________________ */
 
 :root {
     --main-color__dark: #1E394D;
@@ -8,11 +8,11 @@
     --main-color__light-orange: #F4BD00;
 
     /* Background Fade */
-    --background_fade--top: #FAE8A8;
-    --background_fade--c1: #F8D58E;
-    --background_fade--c2: #F4B98B;
-    --background_fade--c3: #EE9381;
-    --background_fade--bottom: #E87873;
+    --background_fade__top: #FAE8A8;
+    --background_fade__c1: #F8D58E;
+    --background_fade__c2: #F4B98B;
+    --background_fade__c3: #EE9381;
+    --background_fade__bottom: #E87873;
 }
 
 @font-face {
@@ -30,9 +30,9 @@ a {
     text-decoration: inherit;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
+/* ____________________________________________________________________________________________________ */
 /*                                                Body                                                  */
-/* ---------------------------------------------------------------------------------------------------- */
+/* ____________________________________________________________________________________________________ */
 
 body {
     width: 100vw;
@@ -50,41 +50,160 @@ body {
     align-items: center;
 }
 
-.container {
-    width: 600px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .-background_fade {
-    background-color: var(--c2);
+    background-color: var(--background_fade__c2);
     background-image:
         radial-gradient(120% 70% at 50% -20%, rgba(255, 255, 255, .55) 0%, rgba(255, 255, 255, 0) 65%),
         linear-gradient(180deg,
-            var(--background_fade--top) 0%,
-            var(--background_fade--c1) 18%,
-            var(--background_fade--c2) 45%,
-            var(--background_fade--c3) 72%,
-            var(--background_fade--bottom)100%);
+            var(--background_fade__top) 0%,
+            var(--background_fade__c1) 18%,
+            var(--background_fade__c2) 45%,
+            var(--background_fade__c3) 72%,
+            var(--background_fade__bottom)100%);
     background-repeat: no-repeat;
     background-attachment: fixed, fixed;
     background-size: 100% 100%, 100% 100%;
 }
 
+.container {
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* Logo */
+
 .logo {
     width: 20%;
-    min-width: 400px;
+    min-width: 200px;
 }
 
 .logo img {
     width: 100%;
 }
 
-.details {
+
+/* Title */
+
+.title {
+    text-align: center;
+
+    display: none;
+}
+
+.title h1 {
+    font-size: 30px;
+}
+
+.title h2 {
+    font-size: 25px;
+}
+
+
+/* Description */
+
+.description {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.description h1, .details h1, .description h2 {
+    width: 100%;
+
     font-size: 20px;
+    text-transform: uppercase;
+}
+
+.description h1, .details h1 {
+    width: 100%;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--main-color__dark);
+
+    font-size: 20px;
+    text-align: center;
+}
+
+.description h2 {
+    width: 100%;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+}
+
+.details h1 {
+    margin-bottom: 5px;
+}
+
+.cards {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 8px;
+}
+
+.cards__item {
+    border-radius: 5px;
+
+    font-size: 19px;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.cards__item__img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards__item__img img {
+    width: 25px;
+}
+
+.cards__item p {
+    transform: translateY(1px);
+}
+
+.description__text p {
+    font-size: 15px;
+    font-weight: 500;
+
+    transform: translateY(-8px);
+}
+
+
+/* Details */
+
+.details {
+    width: 100%;
+
+    font-size: 17px;
+    font-weight: 500;
 
     display: flex;
     flex-direction: column;
@@ -92,60 +211,55 @@ body {
     align-items: center;
 }
 
-.details--item {
-    width: 250px;
-    height: 40px;
-
-    background-color: var(--main-color__light-orange);
+.details__item {
+    width: 100%;
+    height: 35px;
 
     border-radius: 5px;
 
-    display: none;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.details--item img {
-    width: 25px;
+.details__item__img {
+    width: 40px;
 
-    transform: translateY(1px);
+    margin-right: 2px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.details--item a {
+.details__item__img img {
+    width: 25px;
+}
+
+.details__item a {
     width: 100%;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    gap: 7px;
 }
 
-.details--item p {
-    transform: translateY(2px);
+.details__item p {
+    flex: 1;
 }
 
-.details--item__add_contact {
-    margin-bottom: 30px;
-
-    background-color: var(--main-color__dark);
-    color: white;
-
-    font-weight: 500;
-
-    display: flex;
+.details__item__phone {
+    transform: translateY(1px);
 }
 
-.details--item__add_contact img {
-    width: 22px;
-
-    filter: brightness(0) invert(1);
-
-    transform: initial;
+.details__item__phone img {
+    transform: translateY(1px);
 }
 
-.details--item__add_contact:hover p {
+.details__item:hover p {
     text-decoration: underline;
 }
+
